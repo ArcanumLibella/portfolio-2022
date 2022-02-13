@@ -1,10 +1,10 @@
 import React, { MouseEvent } from 'react';
 
-type NavBarProps = {
+type NavButtonProps = {
   onToggleMenu: () => void;
 };
 
-export const NavBar = ({ onToggleMenu }: NavBarProps) => {
+export const NavButton = ({ onToggleMenu }: NavButtonProps) => {
   const handleToggleMenu = (e: MouseEvent<HTMLElement>) => {
     e.stopPropagation();
     onToggleMenu();
@@ -17,7 +17,7 @@ export const NavBar = ({ onToggleMenu }: NavBarProps) => {
       role="button"
       aria-hidden="true"
     >
-      {/* TODO: Styliser la barre avec 3 petits traits ? */}
+      {/* TODO: Styliser la nav avec 3 petits traits ? */}
       MENU
       {/* <MenuButton /* onToggleMenu={onToggleMenu} */}
     </div>

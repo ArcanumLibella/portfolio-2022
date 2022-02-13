@@ -1,6 +1,6 @@
 import React, { VFC } from 'react';
 
-import { MenuItemType } from '../../organisms/MenuNav/MenuNav';
+import { MenuItemType } from '../../organisms/Menu/Menu';
 
 export type MenuItemProps = MenuItemType;
 

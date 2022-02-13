@@ -1,9 +1,10 @@
 import React from 'react';
 
 import { MenuItem } from '../../atoms/MenuItem';
-import { NavBar } from '../../molecules/NavBar';
+import { NavButton } from '../../molecules/NavButton';
 
-type MenuNavProps = {
+type MenuProps = {
+  // isMenuOpen: boolean;
   onToggleMenu: () => void;
 };
 
@@ -31,14 +32,16 @@ const menuItems: MenuItemType[] = [
   },
 ];
 
-export const MenuNav = ({ onToggleMenu }: MenuNavProps) => {
+export const Menu = ({ onToggleMenu /* , isMenuOpen */ }: MenuProps) => {
   const renderedMenuItems = menuItems.map((item) => (
     <MenuItem key={item.label} {...item} />
   ));
 
+  // console.log(isMenuOpen);
+
   return (
-    <div>
-      <NavBar onToggleMenu={onToggleMenu} />
+    <div className="Menu">
+      <NavButton onToggleMenu={onToggleMenu} />
       <div className="flex flex-col justify-center px-20 py-16 h-screen bg-twilight">
         <nav className="ml-32">{renderedMenuItems}</nav>
       </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { MenuNav } from './components/organisms/MenuNav/MenuNav';
+import { Menu } from './components/organisms/Menu';
+import { HeroTemplate } from './components/templates/HeroTemplate';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,8 +13,8 @@ function App() {
   return (
     <div className="App">
       <main className="relative bg-purple-dark h-full">
-        <MenuNav onToggleMenu={onToggleMenu} />
-        {/* <HeroTemplate /> */}
+        <Menu onToggleMenu={onToggleMenu} /* isMenuOpen={isMenuOpen} */ />
+        <HeroTemplate />
       </main>
     </div>
   );
