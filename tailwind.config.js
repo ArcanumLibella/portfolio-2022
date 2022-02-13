@@ -29,20 +29,44 @@ module.exports = {
         body: ['Josefin Sans', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        xxs: '.5rem', // 8px
+        // xxs: '.5rem', // 8px
         xs: '.625rem', // 10px
-        tiny: '.75rem', // 12px
+        // tiny: '.75rem', // 12px
         sm: '.875rem', // 14px
-        md: '.9375rem', // 15px
         base: '1rem', // 16px
-        lg: '1.125rem', // 18px
-        xl: '1.25rem', // 20px
-        xxl: '30rem', // 120px
+        md: '1.125rem', // 18px
+        xl: '6vw', // 64px
+        '2xl': '5.5rem', // 88px
+        '3xl': '6rem', // 96px
+        '4xl': '7.5rem', // 120px
+        '5xl': '9rem', // 144px
+      },
+      backgroundImage: {
+        'midnight': "linear-gradient(to right top, rgb(17, 24, 39), rgb(88, 28, 135), rgb(124, 58, 237))')",
+        'twilight': "linear-gradient(81.95deg, #410087 -30.67%, #E94057 43.66%, #F27121 96.52%)",
+      },
+      textFillColor: theme => theme('borderColor'),
+      textStrokeColor: theme => theme('borderColor'),
+      textStrokeWidth: theme => theme('borderWidth'),
+      paintOrder: {
+        'fsm': { paintOrder: 'fill stroke markers' },
+        'fms': { paintOrder: 'fill markers stroke' },
+        'sfm': { paintOrder: 'stroke fill markers' },
+        'smf': { paintOrder: 'stroke markers fill' },
+        'mfs': { paintOrder: 'markers fill stroke' },
+        'msf': { paintOrder: 'markers stroke fill' },
       },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      textFillColor: ['responsive', 'hover'],
+      textStrokeColor: ['responsive'],
+      textStrokeWidth: ['responsive'],
+      paintOrder: ['responsive'],
+    },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-text-fill-stroke')(), // no options to configure
+  ],
 }
