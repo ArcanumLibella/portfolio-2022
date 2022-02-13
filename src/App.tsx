@@ -1,10 +1,7 @@
 function App() {
   return (
-    <div className="App bg-purple-dark">
-      <header className="">
-        <h1 className="font-bold">Portfolio 2022</h1>
-      </header>
-      <main>
+    <div className="App">
+      <main className="bg-purple-ultraDark h-screen">
         <h1 className="font-brother font-black text-md">
           Je suis un Brother Black
         </h1>
