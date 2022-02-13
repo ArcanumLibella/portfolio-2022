@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* GLOBAL STYLE */
+html {
+    @apply font-body;
+    @apply text-white;
+    @apply bg-purple-ultraDark;
+  }
+
 /* FONTS IMPORT */
 @font-face {
     font-family: 'Brother';
