@@ -1,8 +1,31 @@
-import React from 'react';
+import React, { MouseEvent, useState } from 'react';
 
-export const MenuButton = () => {
-  // TODO: Add burger menu
+// type MenuButtonProps = {
+//   // onClick: () => void;
+//   // onToggleMenu: () => void;
+// };
+
+export const MenuButton = () /* : MenuButtonProps  */ => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenuOpen = (e: MouseEvent<HTMLElement>) => {
+    e.stopPropagation();
+    setIsMenuOpen(!isMenuOpen);
+    // onToggleMenu();
+  };
+
   return (
-    <div className="flex items-center justify-center h-8 w-8 bg-tomato">X</div>
+    // TODO: Add burger menu
+    <button
+      className="flex items-center justify-center h-8 w-8 bg-tomato cursor-pointer"
+      onClick={handleMenuOpen}
+    >
+      X
+    </button>
   );
 };
+
+// function handleMenuOpen(e: MouseEvent<HTMLElement>) {
+//   e.stopPropagation();
+//   onToggleMenu();
+// }

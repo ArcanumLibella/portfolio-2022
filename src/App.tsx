@@ -1,12 +1,19 @@
-import { NavBar } from './components/molecules/NavBar';
-import { MenuTemplate } from './components/templates/MenuTemplate/MenuTemplate';
+import { useState } from 'react';
+
+import { MenuNav } from './components/organisms/MenuNav/MenuNav';
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const onToggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className="App">
       <main className="relative bg-purple-dark h-full">
-        <NavBar />
-        <MenuTemplate />
+        <MenuNav onToggleMenu={onToggleMenu} />
+        {/* <HeroTemplate /> */}
       </main>
     </div>
   );
