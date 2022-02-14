@@ -19,21 +19,12 @@ function App() {
       <div className="App">
         <main className="relative bg-purple-dark h-full">
           <Menu onToggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} />
-          {/* <HomePage /> */}
           <Routes>
-            {/* <Route path="/projects">
-              <ProjectsPage />
-            </Route>
-            <Route path="/about-me">
-              <AboutPage />
-            </Route>
-            <Route path="/">
-              <HomePage />
-            </Route> */}
+            <Route path="/" element={<HomePage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/about-me" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/" element={<HomePage />} />
+            <Route path="*" element={<HomePage />} />
           </Routes>
         </main>
       </div>

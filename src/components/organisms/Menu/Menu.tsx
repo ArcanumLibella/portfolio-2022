@@ -40,7 +40,7 @@ export const Menu = ({ onToggleMenu, isMenuOpen }: MenuProps) => {
   console.log(isMenuOpen);
 
   return (
-    // TODO: Style menu
+    // TODO: Style menu + add close menu if click outside
     <div
       className={`Menu flex justify-between absolute w-8/12 transition-all ease-out duration-300 ${
         isMenuOpen ? 'left-0' : '-left-2/3'
