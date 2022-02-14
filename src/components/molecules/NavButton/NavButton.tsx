@@ -19,7 +19,6 @@ export const NavButton = ({ onToggleMenu }: NavButtonProps) => {
     >
       {/* TODO: Styliser la nav avec 3 petits traits ? */}
       MENU
-      {/* <MenuButton /* onToggleMenu={onToggleMenu} */}
     </div>
   );
 };

@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { Menu } from './components/organisms/Menu';
-import { HeroTemplate } from './components/templates/HeroTemplate';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { HomePage } from './pages/HomePage';
@@ -20,16 +19,24 @@ function App() {
       <div className="App">
         <main className="relative bg-purple-dark h-full">
           <Menu onToggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} />
-          <HeroTemplate />
+          {/* <HomePage /> */}
+          <Routes>
+            {/* <Route path="/projects">
+              <ProjectsPage />
+            </Route>
+            <Route path="/about-me">
+              <AboutPage />
+            </Route>
+            <Route path="/">
+              <HomePage />
+            </Route> */}
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/about-me" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/" element={<HomePage />} />
+          </Routes>
         </main>
       </div>
-
-      <Routes>
-        <Route path="/projects" element={ProjectsPage} />
-        <Route path="/about-me" element={AboutPage} />
-        <Route path="/contact" element={ContactPage} />
-        <Route path="/" element={HomePage} />
-      </Routes>
     </Router>
   );
 }
