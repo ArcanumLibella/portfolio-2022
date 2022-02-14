@@ -4,7 +4,7 @@ import { MenuItem } from '../../atoms/MenuItem';
 import { NavButton } from '../../molecules/NavButton';
 
 type MenuProps = {
-  // isMenuOpen: boolean;
+  isMenuOpen: boolean;
   onToggleMenu: () => void;
 };
 
@@ -32,15 +32,20 @@ const menuItems: MenuItemType[] = [
   },
 ];
 
-export const Menu = ({ onToggleMenu /* , isMenuOpen */ }: MenuProps) => {
+export const Menu = ({ onToggleMenu, isMenuOpen }: MenuProps) => {
   const renderedMenuItems = menuItems.map((item) => (
     <MenuItem key={item.label} {...item} />
   ));
 
-  // console.log(isMenuOpen);
+  console.log(isMenuOpen);
 
   return (
-    <div className="Menu">
+    // TODO: Prepare animation onClick
+    <div
+      className={`Menu absolute w-screen transition-all ease-in-out  ${
+        isMenuOpen ? 'right-2/4' : 'right-0'
+      }`}
+    >
       <NavButton onToggleMenu={onToggleMenu} />
       <div className="flex flex-col justify-center px-20 py-16 h-screen bg-twilight">
         <nav className="ml-32">{renderedMenuItems}</nav>

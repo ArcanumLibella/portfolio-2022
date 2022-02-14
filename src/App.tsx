@@ -8,12 +8,13 @@ function App() {
 
   const onToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    // console.log(isMenuOpen);
   };
 
   return (
     <div className="App">
       <main className="relative bg-purple-dark h-full">
-        <Menu onToggleMenu={onToggleMenu} /* isMenuOpen={isMenuOpen} */ />
+        <Menu onToggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} />
         <HeroTemplate />
       </main>
     </div>
