@@ -2,7 +2,7 @@ import React from 'react';
 
 export const HeroTemplate = () => {
   return (
-    <div className="HeroTemplate flex flex-col justify-center items-end px-20 py-16 h-screen bg-twilight text-right">
+    <div className="HeroTemplate flex flex-col justify-center items-end px-20 py-16 h-screen bg-midnight text-right">
       <h2 className="font-brother font-black text-xl text-stroke-white text-stroke-2 text-fill-transparent uppercase cursor-pointer">
         SEO
       </h2>

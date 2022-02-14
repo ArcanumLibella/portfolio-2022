@@ -40,16 +40,18 @@ export const Menu = ({ onToggleMenu, isMenuOpen }: MenuProps) => {
   console.log(isMenuOpen);
 
   return (
-    // TODO: Prepare animation onClick
+    // TODO: Style menu
     <div
-      className={`Menu absolute w-screen transition-all ease-in-out  ${
-        isMenuOpen ? 'right-2/4' : 'right-0'
+      className={`Menu flex justify-between absolute w-8/12 transition-all ease-out duration-300 ${
+        isMenuOpen ? 'left-0' : '-left-2/3'
       }`}
     >
-      <NavButton onToggleMenu={onToggleMenu} />
-      <div className="flex flex-col justify-center px-20 py-16 h-screen bg-twilight">
-        <nav className="ml-32">{renderedMenuItems}</nav>
+      <div className="flex flex-1 items-center px-20 py-16 h-screen bg-twilight">
+        <nav className="flex flex-col justify-center ml-32">
+          {renderedMenuItems}
+        </nav>
       </div>
+      <NavButton onToggleMenu={onToggleMenu} />
     </div>
   );
 };
